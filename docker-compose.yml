@@ -1,5 +1,7 @@
+version: '2'
 services:
-  reverse:
+  nginx:
+    build: .
     container_name: nginx-reverse-proxy
     image: marketplace.gcr.io/google/nginx1
     volumes:
