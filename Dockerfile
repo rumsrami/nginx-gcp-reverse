@@ -5,4 +5,4 @@ COPY ./assets/conf/nginx.conf /etc/nginx/conf/nginx.conf
 VOLUME /usr/share/nginx/html
 VOLUME /etc/nginx
 EXPOSE 80
-ENTRYPOINT ["nginx", "-g", "daemon of;"]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
