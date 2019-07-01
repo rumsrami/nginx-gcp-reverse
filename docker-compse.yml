@@ -1,0 +1,12 @@
+version: '3'
+services:
+  reverse:
+    container_name: nginx-reverse-proxy-box
+    image: marketplace.gcr.io/google/nginx1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./letsencrypt-site:/usr/share/nginx/html
+    ports:
+      - '80:80'
+    certbot:
+    image: certbot/certbot
