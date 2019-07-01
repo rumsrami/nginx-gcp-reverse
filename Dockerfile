@@ -1,2 +1,6 @@
-
-No such command: \udce2\udc80\udc98up\udce2\udc80\udc99
+FROM gcr.io/cloud-marketplace/google/nginx1
+RUN rm /etc/nginx/conf.d/default.conf
+COPY assets/html /usr/share/nginx/html
+COPY conf /etc/nginx
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
