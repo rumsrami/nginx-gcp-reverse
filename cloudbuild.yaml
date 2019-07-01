@@ -1,24 +1,24 @@
 #cloudbuild.yaml
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args:
-  - 'build'
-  - '--build-arg'
-  - 'version=1.24.0'
-  - '-t'
-  - 'gcr.io/$PROJECT_ID/docker-compose:latest'
-  - '-t'
-  - 'gcr.io/$PROJECT_ID/docker-compose:1.24.0'
-  - '.'
-- name: 'gcr.io/$PROJECT_ID/docker-compose'
-  args: ['version']
-
+# - name: 'gcr.io/cloud-builders/docker'
+#   args:
+#   - 'build'
+#   - '--build-arg'
+#   - 'version=1.24.0'
+#   - '-t'
+#   - 'gcr.io/$PROJECT_ID/docker-compose:latest'
+#   - '-t'
+#   - 'gcr.io/$PROJECT_ID/docker-compose:1.24.0'
+#   - '.'
 # - name: 'gcr.io/$PROJECT_ID/docker-compose'
-#   args: [‘up’]
+#   args: ['version']
+
+- name: 'gcr.io/$PROJECT_ID/docker-compose'
+  args: [‘up’]
 
 # - name: 'gcr.io/cloud-builders/gcloud'
 #   args: [ 'compute', 'instance-groups', 'managed',  'rolling-action', 'restart', 'mx-webclient-ssl-group', '--region=us-east1' ]
 
-images:
-- 'gcr.io/$PROJECT_ID/docker-compose:latest'
-- 'gcr.io/$PROJECT_ID/docker-compose:1.24.0'
+# images:
+# - 'gcr.io/$PROJECT_ID/docker-compose:latest'
+# - 'gcr.io/$PROJECT_ID/docker-compose:1.24.0'
