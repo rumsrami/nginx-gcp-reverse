@@ -14,7 +14,7 @@ steps:
   args: ['version']
 
 - name: 'gcr.io/$PROJECT_ID/docker-compose'
-  args: [‘up’, ‘-d’]
+  args: [‘up’]
 
 # - name: 'gcr.io/cloud-builders/gcloud'
 #   args: [ 'compute', 'instance-groups', 'managed',  'rolling-action', 'restart', 'mx-webclient-ssl-group', '--region=us-east1' ]
